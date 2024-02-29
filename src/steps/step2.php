@@ -2,16 +2,15 @@
 require_once "../encrypters/MD5Encrypter.php";
 define("string_length", 4);
 
-$inputStrings = [
-    "7a95bf926a0333f57705aeac07a362a2",
-    "08054846bbc9933fd0395f8be516a9f9"
-];
+$inputString = $argv[1] ?? NULL;
 
-foreach ($inputStrings as $str) {
-    $result = bruteForce($str);
-    echo "result: $result\n";
+if (!$inputString) {
+    echo "Error: No hash was provided";
+    exit(1);
 }
 
+$result = bruteForce($inputString);
+echo "result: $result\n";
 
 function bruteForce(string $hash): ?string {
     $encrypter = new MD5Encrypter;
