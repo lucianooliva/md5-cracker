@@ -48,9 +48,8 @@ class PDOHelper {
         if (!$stmt->execute($values)) throw new Exception("Could not execute query. ".json_encode($stmt->errorInfo()));
         return $this->dbConn->lastInsertId();
     }
-    public function getByOneField(string $value, string $colName, array $fields, string $tableName): array {
-        $fieldsStr = "`" . implode("`,`", $fields) . "`";
-        $sql  = "SELECT $fieldsStr ";
+    public function getByOneField(string $value, string $colName, string $field, string $tableName): array {
+        $sql  = "SELECT $field AS $field ";
         $sql .= "FROM `$tableName` ";
         $sql .= "WHERE `$colName` = :value;";
         if (!$this->dbConn) {

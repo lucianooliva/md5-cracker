@@ -17,7 +17,7 @@ echo "Result: $result\n";
 
 function decrypt(string $hash): ?string {
     $pdo = new PDOHelper;
-    $result = $pdo->getByOneField($hash, "hash", ["id", "word", "hash"], "rainbow_table");
+    $result = $pdo->getByOneField($hash, "hash", "word", "rainbow_table");
     if (empty($result)) {
         return NULL;
     }
