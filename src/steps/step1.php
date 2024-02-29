@@ -13,7 +13,6 @@ foreach ($inputStrings as $str) {
     $actual = md5($str);
     echo "my hash:     $result\n";
     echo "actual hash: $actual\n";
-    echo ($result === $actual) ? "RIGHT" : "WRONG";
     echo "\n";
 }
 
