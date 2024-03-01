@@ -6,11 +6,11 @@ This project is a solution for one of John Crickett's Coding Challenges. To read
 
 ## Running this project locally
 
-In this project, all challenges' steps are written in different PHP scripts. They are located in `src/steps`. Here's how to run each one:
+In this project, all challenge's steps are written in different PHP scripts. They are located in `src/steps`. Steps 4 and 5 use a MySQL database. You can configure your own database manually and change `dbconfig.php` accordingly. Another option is to use the Docker container configured in our `docker-compose.yml`. You just need to run `docker compose up -d` and keep the default `dbconfig.php`.
 
 ### Step 1
 
-In this step, we are asked to write a MD5 hasher. To execute the script, run:
+In this step, we are asked to write a MD5 hasher. The script uses some sample strings to generate the hashes and print them alongside the output of PHP's [md5()](https://www.php.net/manual/en/function.md5.php) function to compare the results. To execute the script, run:
 
 ```
 php step1.php
@@ -27,7 +27,7 @@ php step2.php b04f36eaa39aadf30603a29cba1aaff1
 Output:
 
 ```
-result: !$$!
+Result: !$$!
 ```
 
 ### Step 3

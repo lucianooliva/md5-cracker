@@ -10,7 +10,7 @@ if (!$inputString) {
 }
 
 $result = bruteForce($inputString);
-echo "result: $result\n";
+echo "Result: $result\n";
 
 function bruteForce(string $hash): ?string {
     $encrypter = new MD5Encrypter;
