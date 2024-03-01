@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:8.0
+    container_name: rainbow_db
+    cap_add:
+      - SYS_NICE
+    environment:
+      - MYSQL_DATABASE=rainbow_db
+      - MYSQL_ROOT_PASSWORD=any_password
+    ports:
+      - 3306:3306
+    volumes:
+      - db:/var/lib/mysql
+      - ./data/mysql/:/docker-entrypoint-initdb.d/
+volumes:
+  db:
+    driver: local
